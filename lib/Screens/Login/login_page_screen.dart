@@ -241,6 +241,20 @@ class LoginPageScreen extends StatelessWidget {
                         if (data != null) {
                           print(data.fName!);
                           if (passwordController.text == data.pwd) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                  content: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Processing ",
+                                    textScaleFactor: 1,
+                                  ),
+                                  CircularProgressIndicator()
+                                ],
+                              )),
+                            );
                             getpop(context, data);
                           } else {
                             ScaffoldMessenger.of(context).showSnackBar(

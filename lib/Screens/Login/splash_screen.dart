@@ -1,7 +1,5 @@
-
 import 'package:flutter/material.dart';
 import 'package:WMS_Application/core/app_export.dart';
-
 
 class SplashScreen extends StatelessWidget {
   void initState() {
@@ -296,7 +294,7 @@ class SplashScreen extends StatelessWidget {
                                         ),
                                       ),
                                       child: Text(
-                                        "Version 1.0",
+                                        "Version 1.4",
                                         textScaleFactor: 1,
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.center,

@@ -1,4 +1,4 @@
-package com.mayursapplication.wms_270522
+package com.mayursapplication.app.wms_270522
 
 import io.flutter.embedding.android.FlutterActivity
 

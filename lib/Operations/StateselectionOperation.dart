@@ -9,10 +9,7 @@ import 'package:http/http.dart' as http;
 import 'package:WMS_Application/Model/AreaModel.dart';
 import 'package:WMS_Application/Model/Constants.dart';
 import 'package:WMS_Application/Model/DistibutoryModel.dart';
-// import 'package:WMS_Application/Model/OutletManagerSystemDataModel.dart';
 import 'package:WMS_Application/Model/Project/OMS_Overview_model.dart';
-// import 'package:WMS_Application/Model/Project/OmsList_Model.dart';
-// import 'package:WMS_Application/Model/Project/Project_list_Model.dart';
 import 'package:WMS_Application/Model/Project/State_list_Model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -25,7 +22,6 @@ Future<List<State_list_Model>> getStateAuthority() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     int? userid = preferences.getInt('userid');
     final response = await http.get(Uri.parse(
-        // 'http://wmsservices.seprojects.in/api/Project/GetProjectAuthority?userid=$userid'
         'http://wmsservices.seprojects.in/api/Project/GetProjectAuthorityForWMS?userid=$userid'));
 
     print('State List Api');
@@ -184,8 +180,8 @@ Future<List<PumpStationMasterModel>> getDC() async {
     final response = await http.get(Uri.parse(
         'http://wmsservices.seprojects.in/api/Project/getPumpData?pumpStationId_=0&conString=$conString'));
     print('Dc Api');
-    /* print(
-        'http://wmsservices.seprojects.in/api/Project/getPumpData?pumpStationId_=0&conString=$conString');*/
+    print(
+        'http://wmsservices.seprojects.in/api/Project/getPumpData?pumpStationId_=0&conString=$conString');
 
     if (response.statusCode == 200) {
       var json = jsonDecode(response.body);

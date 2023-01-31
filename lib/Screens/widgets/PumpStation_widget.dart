@@ -26,6 +26,7 @@ class Group79ItemWidget extends StatelessWidget {
           7.50,
         ),
       ),
+
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: ColorConstant.whiteA700,
@@ -802,15 +803,17 @@ class Group79ItemWidget extends StatelessWidget {
 
   getWidgetHeight(ProjectOverviewModel modelData) {
     double px;
-    if (modelData.pS13Status != null) {
-      px = 260.00;
-    } else if (modelData.pS9Status != null) {
-      px = 210.00;
-    } else if (modelData.pS5Status != null) {
-      px = 160.00;
-    } else {
-      px = 125.00;
-    }
+    // if (modelData.pS13Status != null) {
+    //   px = 260.00;
+    // } else if (modelData.pS9Status != null) {
+    //   px = 210.00;
+    // } else if (modelData.pS5Status != null) {
+    //   px = 160.00;
+    // } else {
+    //   px = 125.00;
+    // }
+    px = 65.00 *
+        (modelData.noOfPS! > 8 ? 4.8 : ((modelData.noOfPS! > 4 ? 3.4 : 2.55)));
     return px;
   }
 }

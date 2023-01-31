@@ -324,6 +324,7 @@ class _Graphical_Screen_SqlState extends State<Graphical_Screen_Sql> {
             : selectedDistributory!.id.toString();
 
       _firstLoad();
+      _DisplayList = [];
     } catch (_, ex) {}
   }
 
@@ -415,7 +416,7 @@ class _Graphical_Screen_SqlState extends State<Graphical_Screen_Sql> {
                                       _hasNextPage = true;
                                       _isFirstLoadRunning = false;
                                       _isLoadMoreRunning = false;
-                                      _DisplayList = <OmsSqlMasterModel>[];
+                                      // _DisplayList = <OmsSqlMasterModel>[];
                                     });
                                     await GetOmsOverviewModel();
                                   },

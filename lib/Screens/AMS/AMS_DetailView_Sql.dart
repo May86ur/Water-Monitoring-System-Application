@@ -157,6 +157,10 @@ class _AmsDetailViewSqlState extends State<AmsDetailViewSql> {
                             alignment: Alignment.center,
                             onPressed: () async {
                               await _reload();
+                              getpop(context);
+                              new Future.delayed(new Duration(seconds: 1), () {
+                                Navigator.pop(context); //pop dialog
+                              });
                             },
                             icon: Icon(
                               Icons.refresh,
@@ -880,6 +884,19 @@ class _AmsDetailViewSqlState extends State<AmsDetailViewSql> {
               ),
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  getpop(context) {
+    return showDialog(
+      barrierDismissible: false,
+      useSafeArea: false,
+      context: context,
+      builder: (ctx) => Container(
+        child: Center(
+          child: CircularProgressIndicator(),
         ),
       ),
     );

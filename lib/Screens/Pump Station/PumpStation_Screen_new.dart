@@ -36,14 +36,14 @@ class _PumpStation_ScreenState extends State<PumpStation_Screen> {
           pumpno = PumpDropDownList!.length;
         }));
 
-    Timer.periodic(Duration(seconds: 30), (Timer t) async {
-      await ConvertPsDetails().then((value) => setState(() {
-            PumpDropDownList = value;
-            selectPumpStationId = value.first;
-            pumpstation = value.first.pumpStationId;
-            pumpno = PumpDropDownList!.length;
-          }));
-    });
+    // Timer.periodic(Duration(seconds: 30), (Timer t) async {
+    //   await ConvertPsDetails().then((value) => setState(() {
+    //         PumpDropDownList = value;
+    //         selectPumpStationId = value.first;
+    //         pumpstation = value.first.pumpStationId;
+    //         pumpno = PumpDropDownList!.length;
+    //       }));
+    // });
   }
 
   List<PumpStationDropDownModel>? PumpDropDownList;

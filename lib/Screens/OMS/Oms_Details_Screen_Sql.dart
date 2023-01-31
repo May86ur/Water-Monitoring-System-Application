@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:WMS_Application/Model/Project/OmsSqlMasterModel.dart';
 import 'package:WMS_Application/Operations/StateselectionOperation.dart';
 import 'package:WMS_Application/Screens/Login/MyDrawerScreen.dart';
+import 'package:WMS_Application/Screens/OMS/8day_schedule_Screen_SQL.dart';
 // import 'package:WMS_Application/Screens/OMS/8days_schedule_screen.dart';
 import 'package:WMS_Application/Screens/OMS/Oms_Details_Screen.dart';
 import 'package:WMS_Application/styles.dart';
@@ -165,6 +166,11 @@ class _OMS_Details_Screen_SqlState extends State<OMS_Details_Screen_Sql> {
                                     alignment: Alignment.center,
                                     onPressed: () async {
                                       await _reload();
+                                      getpop(context);
+                                      new Future.delayed(
+                                          new Duration(seconds: 1), () {
+                                        Navigator.pop(context); //pop dialog
+                                      });
                                     },
                                     icon: Icon(
                                       Icons.refresh,
@@ -2184,7 +2190,7 @@ class _OMS_Details_Screen_SqlState extends State<OMS_Details_Screen_Sql> {
                                 // ///8 days Schedule
                                 InkWell(
                                   onTap: (() {
-                                    showDialog(
+                                    /* showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
                                           return Container(
@@ -2203,12 +2209,14 @@ class _OMS_Details_Screen_SqlState extends State<OMS_Details_Screen_Sql> {
                                                       ),
                                                     ),
                                                   )));
-                                        });
-                                    // Navigator.push(
-                                    //     context,
-                                    //     MaterialPageRoute(
-                                    //         builder: (context) =>
-                                    //             Schedule_Screen()));
+                                        });*/
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                Schedule_Screen_SQL(
+                                                    widget.ProjectName!,
+                                                    modelData)));
                                   }),
                                   child: Container(
                                     alignment: Alignment.center,
@@ -2641,5 +2649,18 @@ class _OMS_Details_Screen_SqlState extends State<OMS_Details_Screen_Sql> {
       var converted = data * 10.2;
       return converted.toStringAsFixed(2);
     }
+  }
+
+  getpop(context) {
+    return showDialog(
+      barrierDismissible: false,
+      useSafeArea: false,
+      context: context,
+      builder: (ctx) => Container(
+        child: Center(
+          child: CircularProgressIndicator(),
+        ),
+      ),
+    );
   }
 }

@@ -158,7 +158,7 @@ class _Oms_Screen_SqlState extends State<Oms_Screen_Sql> {
             value: areaModel,
             child: Center(
               child: Text(
-                areaModel.areaName!,
+                areaModel.areaName ?? "",
                 textScaleFactor: 1,
                 style: TextStyle(fontSize: 16),
               ),

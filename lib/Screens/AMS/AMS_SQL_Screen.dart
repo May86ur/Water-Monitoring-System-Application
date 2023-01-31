@@ -148,7 +148,7 @@ class _Ams_SQL_screenState extends State<Ams_SQL_screen> {
             value: areaModel,
             child: Center(
               child: Text(
-                areaModel.areaName!,
+                areaModel.areaName ?? '',
                 textScaleFactor: 1,
                 style: TextStyle(fontSize: 16),
               ),

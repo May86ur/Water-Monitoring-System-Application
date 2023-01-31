@@ -181,6 +181,11 @@ class _OMS_Details_ScreenState extends State<OMS_Details_Screen> {
                                     alignment: Alignment.center,
                                     onPressed: () async {
                                       await _reload();
+                                      getpop(context);
+                                      new Future.delayed(
+                                          new Duration(seconds: 1), () {
+                                        Navigator.pop(context); //pop dialog
+                                      });
                                     },
                                     icon: Icon(
                                       Icons.refresh,
@@ -4004,5 +4009,18 @@ class _OMS_Details_ScreenState extends State<OMS_Details_Screen> {
         } else
           return 'N';
     }
+  }
+
+  getpop(context) {
+    return showDialog(
+      barrierDismissible: false,
+      useSafeArea: false,
+      context: context,
+      builder: (ctx) => Container(
+        child: Center(
+          child: CircularProgressIndicator(),
+        ),
+      ),
+    );
   }
 }

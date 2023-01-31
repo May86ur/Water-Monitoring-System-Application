@@ -482,11 +482,12 @@ class _Delevery_chember_ScreenState extends State<Delevery_chember_Screen> {
                                                                       FontWeight
                                                                           .w500),
                                                             ),
-                                                            psData.first.deviceTimeStamp !=
+                                                            psData[index]
+                                                                        .deviceTimeStamp !=
                                                                     null
                                                                 ? Text(
-                                                                    getlongDate(psData
-                                                                        .first
+                                                                    getlongDate(psData[
+                                                                            index]
                                                                         .deviceTimeStamp!
                                                                         .toString()),
                                                                     textScaleFactor:
@@ -632,10 +633,52 @@ class _Delevery_chember_ScreenState extends State<Delevery_chember_Screen> {
                                 );
                               }
                             } else if (snapshot.hasError) {
-                              return Text(
-                                "Something Went Wrong: " +
-                                    snapshot.error.toString(),
-                                textScaleFactor: 1,
+                              return Padding(
+                                padding: EdgeInsets.symmetric(vertical: 80),
+                                child: Center(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromARGB(211, 255, 255, 255),
+                                        borderRadius:
+                                            BorderRadius.circular(25)),
+                                    height: MediaQuery.of(context).size.height *
+                                        0.3,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.65,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Image(
+                                            height: 100,
+                                            width: 100,
+                                            image: AssetImage(
+                                                'assets/images/storm.png')),
+                                        Text(
+                                          'OPPS!',
+                                          softWrap: true,
+                                          style: TextStyle(
+                                              color: Colors.grey.shade500,
+                                              fontSize: 24,
+                                              fontFamily: "RaleWay",
+                                              fontWeight: FontWeight.w800),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 10, left: 10, right: 10),
+                                          child: Text(
+                                            'it seems Something went wrong with the Connection please try after sometime',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                fontFamily: "RaleWay",
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
                               );
                             } else {
                               return Container(

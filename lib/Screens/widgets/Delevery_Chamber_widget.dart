@@ -15,7 +15,7 @@ class Group79aItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: getVerticalSize(
-        96.00,
+        98.00,
       ),
       width: getHorizontalSize(
         340.00,

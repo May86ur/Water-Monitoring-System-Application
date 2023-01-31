@@ -324,6 +324,7 @@ class _Graphical_Screen_UpdatedState extends State<Graphical_Screen_Updated> {
             : selectedDistributory!.id.toString();
 
       _firstLoad();
+      _DisplayList = [];
     } catch (_, ex) {}
   }
 
@@ -403,7 +404,7 @@ class _Graphical_Screen_UpdatedState extends State<Graphical_Screen_Updated> {
                                       _hasNextPage = true;
                                       _isFirstLoadRunning = false;
                                       _isLoadMoreRunning = false;
-                                      _DisplayList = <OmsMasterModel>[];
+                                      // _DisplayList = <OmsMasterModel>[];
                                     });
                                     await GetOmsOverviewModel();
                                   },
